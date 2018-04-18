@@ -42,7 +42,25 @@ class SetImpl<T extends Comparable<T>> implements Set<T> {
 	 * Bonusaufgabe: Gibt einen Iterator zurück, welcher nur die Knoten
 	 */
 	public Iterator<T> leafIterator() {
-		throw new UnsupportedOperationException();
+		return new Iterator<T>() {
+			Element next;
+
+			Stack<Element> hoo = new StackImpl<>();
+
+			{
+				
+			}
+
+			@Override
+			public boolean hasNext() {
+				return false;
+			}
+
+			@Override
+			public T next() {
+				return null;
+			}
+		}
 	}
 
 	private class Element {
