@@ -14,16 +14,16 @@ public class StackImpl<T> implements Stack<T> {
 	public Iterator<T> iterator() {
 		// Iterator implementieren...
 		return new Iterator<T>() {
-			Stack<Element> agenda = new StackImpl<>();
+			Stack<Element> reverse = new StackImpl<>();
 
 			@Override
 			public boolean hasNext() {
-				return agenda.size() > 0;
+				return reverse.size() > 0;
 			}
 
 			@Override
 			public T next() {
-				return agenda.pop().value;
+				return reverse.pop().value;
 			}
 		};
 	}
