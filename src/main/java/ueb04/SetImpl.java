@@ -1,6 +1,7 @@
 package ueb04;
 
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.NoSuchElementException;
 import java.util.function.Predicate;
 
@@ -11,7 +12,24 @@ class SetImpl<T extends Comparable<T>> implements Set<T> {
 	@Override
 	public Iterator<T> iterator() {
 		// Iterator implementieren...
-		throw new UnsupportedOperationException();
+		return new Iterator<T>() {
+			Stack<Element> agenda = new StackImpl<>();
+
+			{
+				if (root != null)
+					agenda.push(root);
+			}
+
+			@Override
+			public boolean hasNext() {
+				return agenda.size() > 0;
+			}
+
+			@Override
+			public T next() {
+				return null;
+			}
+		};
 	}
 
 	/**
