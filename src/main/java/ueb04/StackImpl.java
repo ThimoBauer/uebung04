@@ -12,9 +12,16 @@ public class StackImpl<T> implements Stack<T> {
 	 */
 	@Override
 	public Iterator<T> iterator() {
-		// Iterator implementieren...
 		return new Iterator<T>() {
 			Stack<Element> reverse = new StackImpl<>();
+
+			{
+				Element iterator = top;
+				while (iterator != null) {
+					reverse.push(iterator);
+					iterator = iterator.next;
+				}
+			}
 
 			@Override
 			public boolean hasNext() {
