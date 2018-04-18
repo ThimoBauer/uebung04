@@ -45,10 +45,11 @@ class SetImpl<T extends Comparable<T>> implements Set<T> {
 		return new Iterator<T>() {
 			Element next;
 
-			Stack<Element> hoo = new StackImpl<>();
+			Stack<Element> agenda = new StackImpl<>();
 
 			{
-				
+				if (root != null)
+					agenda.push(root);
 			}
 
 			@Override
@@ -60,7 +61,7 @@ class SetImpl<T extends Comparable<T>> implements Set<T> {
 			public T next() {
 				return null;
 			}
-		}
+		};
 	}
 
 	private class Element {
