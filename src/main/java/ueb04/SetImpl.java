@@ -27,7 +27,13 @@ class SetImpl<T extends Comparable<T>> implements Set<T> {
 
 			@Override
 			public T next() {
-				return null;
+					Element e = agenda.pop();
+					if (e.left != null)
+						agenda.push(e.left);
+					if (e.right != null)
+						agenda.push(e.right);
+					return e.val;
+
 			}
 		};
 	}
