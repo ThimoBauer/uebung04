@@ -14,7 +14,7 @@ interface Set<T extends Comparable<T>> extends Iterable<T> {
 	boolean contains(T s);
 
 	/**
-	 * Gibt die Größe des Sets zurück
+	 * Gibt die Größe des Sets zurück -
 	 */
 	int size();
 }
